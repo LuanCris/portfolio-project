@@ -2,6 +2,7 @@
 /* 
   Variáveis para cores:
   --fundo-principal
+  --darkblue
   --texto
   --texto-inverso
   --destaque
@@ -17,6 +18,7 @@
 
 :root {
   --fundo-principal: #f5f5f5;
+  --darkblue: darkblue;
   --texto: #222222;
   --texto-inverso: #ffffff;
   --destaque: #0077ff;
@@ -28,7 +30,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5em;
   background-color: var(--fundo-principal);
-  color: darkblue;
+  color: var(--darkblue);
 }
 
 header {
@@ -125,7 +127,7 @@ article {
 
 article h2 {
   color: var(--destaque);
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   font-size: 1.4em;
 }
 
@@ -159,12 +161,25 @@ article h2 {
 
 #skills-container .name {
   font-weight: bold;
-  color: var(--texto);
+  color: var(--darkblue);
+  transition: color 0.5s;
+}
+
+#skills-container .name:hover {
+  font-weight: bold;
+  color: var(--destaque);
+  cursor: pointer;
 }
 
 #skills-container .percent {
   font-weight: bold;
   color: var(--destaque);
+  transition: color 0.5s;
+}
+
+#skills-container .percent:hover {
+  color: var(--destaque-inverso);
+  cursor: pointer;
 }
 
 #skills-container .bar {
@@ -188,4 +203,40 @@ article h2 {
   #skills-container {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+#graduation-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+#graduation-container .course {
+  background-color: var(--fundo-principal);
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque);
+  padding: 5px 10px;
+  transition: all 0.5s;
+}
+
+#graduation-container .course:hover {
+  border-left-width: 15px;
+  border-left-color: var(--destaque-inverso);
+  background-color: var(--fundo-card);
+  color: var(--destaque);
+  cursor: pointer;
+}
+
+#graduation-container .course .period {
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+#graduation-container .course .institution {
+  color: var(--destaque);
+  transition: color 0.5s;
+}
+
+#graduation-container .course .institution:hover {
+  color: var(--destaque-inverso);
 }
