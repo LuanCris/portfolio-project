@@ -195,15 +195,7 @@ article h2 {
   border-radius: 4px;
 }
 
-@media screen and (min-width: 768px) {
-  main {
-    grid-template-columns: 1fr 65vw 1fr;
-  }
 
-  #skills-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 #graduation-container {
   display: flex;
@@ -234,9 +226,113 @@ article h2 {
 
 #graduation-container .course .institution {
   color: var(--destaque);
+  font-size: 1.1em;
   transition: color 0.5s;
 }
 
 #graduation-container .course .institution:hover {
   color: var(--destaque-inverso);
+}
+
+#project-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+
+#project-container .project {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--fundo-principal);
+  border-radius: 8px;
+  border-left: 5px solid var(--destaque);
+  transition: all 0.5s;
+  padding: 10px;
+}
+
+#project-container .project:hover {
+  border-left-width: 15px;
+  border-left-color: var(--destaque-inverso);
+  background-color: var(--fundo-card);
+  color: var(--destaque);
+  cursor: pointer;
+}
+
+#project-container .image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#project-container .project-info h3 {
+  color: var(--destaque);
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  transition: color 0.5s;
+}
+
+#project-container .project-info h3:hover {
+  color: var(--destaque-inverso);
+}
+
+#project-container .project-info p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+#project-container .project-info .period {
+  font-weight: bold;
+}
+
+#project-container .project-info .description .title {
+  color: var(--destaque);
+  transition: color 0.5s;
+}
+
+#project-container .project-info .description .title:hover{
+  color: var(--destaque-inverso);
+  cursor: pointer;
+}
+
+footer {
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  padding: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+footer a {
+  color: var(--texto-inverso);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+footer a:hover {
+  color: var(--destaque-inverso);
+}
+
+@media screen and (min-width: 768px) {
+
+  #skills-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #project-container .project {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  #project-container .project-info {
+    width: 70%;
+  }
+
+  #project-container .image {
+    aspect-ratio: 1/1;
+    max-width: 30%;
+    max-height: 200px;
+  }
 }
