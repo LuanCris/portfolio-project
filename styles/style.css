@@ -306,6 +306,16 @@ article h2 {
   transition: color 0.5s;
 }
 
+#project-container .project-info .description a {
+  color: var(--destaque);
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+#project-container .project-info .description a:hover {
+  color: var(--destaque-inverso);
+}
+
 #project-container .project-info .description .title:hover{
   color: var(--destaque-inverso);
   cursor: pointer;
